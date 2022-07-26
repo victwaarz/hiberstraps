@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>be.faros.hiberstraps</groupId>
-	<artifactId>demo-start</artifactId>
+	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo-start</name>
+	<name>demo</name>
 	<description>Hibernate demo start situation</description>
 	<properties>
 		<java.version>17</java.version>
