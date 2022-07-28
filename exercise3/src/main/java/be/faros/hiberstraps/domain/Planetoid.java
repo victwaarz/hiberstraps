@@ -5,7 +5,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 @Entity
-public class Planetoid extends SpaceObject {
+public class Planetoid extends Satellite {
     @Enumerated(EnumType.STRING)
     private Shape shape;
 

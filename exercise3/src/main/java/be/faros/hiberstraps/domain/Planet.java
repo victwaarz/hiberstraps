@@ -3,7 +3,7 @@ package be.faros.hiberstraps.domain;
 import javax.persistence.Entity;
 
 @Entity
-public class Planet extends SpaceObject {
+public class Planet extends Satellite {
     private boolean gaseous;
 
     public boolean isGaseous() {
