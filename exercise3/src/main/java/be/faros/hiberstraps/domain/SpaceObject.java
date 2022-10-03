@@ -1,15 +1,20 @@
 package be.faros.hiberstraps.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Satellite extends BaseEntity {
+public abstract class SpaceObject extends BaseEntity {
     private String name;
     private long orbitalPeriod;
     private double eccentricity;
+
+    @ManyToOne
+    private SpaceObject centralBody;
+
+    @OneToMany(mappedBy = "centralBody")
+    private List<SpaceObject> satellites;
 
     public String getName() {
         return name;
@@ -33,5 +38,21 @@ public abstract class Satellite extends BaseEntity {
 
     public void setEccentricity(double eccentricity) {
         this.eccentricity = eccentricity;
+    }
+
+    public SpaceObject getCentralBody() {
+        return centralBody;
+    }
+
+    public void setCentralBody(SpaceObject centralBody) {
+        this.centralBody = centralBody;
+    }
+
+    public List<SpaceObject> getSatellites() {
+        return satellites;
+    }
+
+    public void setSatellites(List<SpaceObject> satellites) {
+        this.satellites = satellites;
     }
 }

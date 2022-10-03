@@ -6,7 +6,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Star extends Satellite {
+public class Star extends SpaceObject {
     @Enumerated(EnumType.STRING)
     private Type type;
 

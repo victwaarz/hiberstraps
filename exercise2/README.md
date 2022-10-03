@@ -1,5 +1,14 @@
 ## Satellite starter
 This is the start point for exercise 2 of the Hibernate course.
-It was created using [Spring Initializr](http://start.spring.io).
+It builds upon the solution to exercise 1.
 
-Included dependencies are Spring Data JPA, Spring Web, Bean Validation and the H2 Database driver.
+Included dependencies are Spring Data JPA, Spring Web and the H2 Database driver.
+
+### The exercise
+Your goal is to implement repository classes with several queries using the Criteria API.
+
+- Find a Galaxy by a name (exactly)
+- Find a Galaxy by a name (fuzzy)
+- Retrieve all Stars for a given Galaxy
+- Find all SpaceObjects orbiting a Star, up to 3 levels deep (spaceObjects of spaceObjects)
+- Find all Planets and Planetoids by a name (fuzzy) that orbit a Star of a given type.
