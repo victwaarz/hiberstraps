@@ -10,5 +10,5 @@ Your goal is to implement repository classes with several queries using the Crit
 - Find a Galaxy by a name (exactly)
 - Find a Galaxy by a name (fuzzy)
 - Retrieve all Stars for a given Galaxy
-- Find all SpaceObjects orbiting a Star, up to 3 levels deep (spaceObjects of spaceObjects)
+- Find all SpaceObjects orbiting a Star, including indirectly up to 3 levels deep (spaceObjects of spaceObjects)
 - Find all Planets and Planetoids by a name (fuzzy) that orbit a Star of a given type.
