@@ -16,22 +16,21 @@ public class CourseRepository {
         this.em = em;
     }
 
-    public List<Course> findCoursesByName() {
+    public List<Course> findCoursesByName(String name) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
 
         CriteriaQuery<Course> query = cb.createQuery(Course.class);
 
         Root<Course> root = query.from(Course.class);
 
-        Path<Object> name = root.get("name");
+        Path<Object> namePath = root.get("name");
 
-        Predicate test = cb.equal(name, "test");
-        cb.not(test);
+        Predicate test = cb.equal(namePath, name);
 
         query.where(test);
 
-        TypedQuery<Course> query1 = em.createQuery(query);
+        TypedQuery<Course> tq = em.createQuery(query);
 
-        return query1.getResultList();
+        return tq.getResultList();
     }
 }
