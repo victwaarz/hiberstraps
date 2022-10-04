@@ -12,12 +12,26 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
 import java.util.List;
+import java.util.UUID;
 
 public class SpaceObjectRepository {
     private final EntityManager em;
 
     public SpaceObjectRepository(EntityManager em) {
         this.em = em;
+    }
+
+    public SpaceObject getById(UUID id) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<SpaceObject> query = cb.createQuery(SpaceObject.class);
+
+        Root<SpaceObject> root = query.from(SpaceObject.class);
+        query.where(cb.equal(root.get("id"), id));
+
+        query.select(root);
+
+        TypedQuery<SpaceObject> tq = em.createQuery(query);
+        return tq.getSingleResult();
     }
 
     public List<SpaceObject> findAllOrbitingStar() {
@@ -31,8 +45,9 @@ public class SpaceObjectRepository {
 
         query.where(cb.or(cb.equal(firstLayer.type(), Star.class), cb.equal(secondLayer.type(), Star.class), cb.equal(thirdLayer.type(), Star.class)));
 
-        TypedQuery<SpaceObject> tq = em.createQuery(query);
+        query.select(root);
 
+        TypedQuery<SpaceObject> tq = em.createQuery(query);
         return tq.getResultList();
     }
 
@@ -49,8 +64,9 @@ public class SpaceObjectRepository {
                 cb.equal(join.get("type"), type),
                 cb.like(root.get("name"), "%" + name + "%")));
 
-        TypedQuery<SpaceObject> tq = em.createQuery(query);
+        query.select(root);
 
+        TypedQuery<SpaceObject> tq = em.createQuery(query);
         return tq.getResultList();
     }
 }

@@ -27,8 +27,9 @@ public class StarRepository {
 
         query.where(cb.equal(root.get("galaxy"), galaxy));
 
-        TypedQuery<Star> tq = em.createQuery(query);
+        query.select(root);
 
+        TypedQuery<Star> tq = em.createQuery(query);
         return tq.getResultList();
     }
 }

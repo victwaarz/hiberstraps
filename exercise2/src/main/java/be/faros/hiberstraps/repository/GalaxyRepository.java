@@ -25,8 +25,9 @@ public class GalaxyRepository {
 
         query.where(cb.equal(root.get("name"), name));
 
-        TypedQuery<Galaxy> tq = em.createQuery(query);
+        query.select(root);
 
+        TypedQuery<Galaxy> tq = em.createQuery(query);
         return tq.getSingleResult();
     }
 
@@ -38,8 +39,9 @@ public class GalaxyRepository {
 
         query.where(cb.like(root.get("name"), "%" + name + "%"));
 
-        TypedQuery<Galaxy> tq = em.createQuery(query);
+        query.select(root);
 
+        TypedQuery<Galaxy> tq = em.createQuery(query);
         return tq.getSingleResult();
     }
 }

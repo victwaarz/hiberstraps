@@ -7,8 +7,8 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class SpaceObject extends BaseEntity {
     private String name;
-    private long orbitalPeriod;
-    private double eccentricity;
+    private Long orbitalPeriod;
+    private Double eccentricity;
 
     @ManyToOne
     private SpaceObject centralBody;

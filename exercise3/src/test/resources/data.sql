@@ -88,11 +88,11 @@ VALUES ('60887d5d-6c01-450d-8c84-ec628e096a40', 'SPHERICAL');
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('5583daa0-5961-4d5f-94d9-f71a39eaf5b6', 'Eris', 559.07, 0.43607, '1c8efd7c-0183-443a-b5f7-78e9e8d3e656');
 INSERT INTO planetoid (id, shape)
-VALUES ('5583daa0-5961-4d5f-94d9-f71a39eaf5b6', 'SPHERICAL');
+VALUES ('60887d5d-6c01-450d-8c84-ec628e096a40', 'SPHERICAL');
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('f6cb2906-9d84-4ba5-9491-e7be5082987e', 'Makemake', 306.21, 0.16126, '1c8efd7c-0183-443a-b5f7-78e9e8d3e656');
 INSERT INTO planetoid (id, shape)
-VALUES ('f6cb2906-9d84-4ba5-9491-e7be5082987e', 'SPHERICAL');
+VALUES ('60887d5d-6c01-450d-8c84-ec628e096a40', 'SPHERICAL');
 
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('0076f576-6ac0-48b0-b898-dbb25504e2ef', 'Luna', 0.07485386575, 0.0549, '273974a5-caf8-46a6-b5c4-440f6fbece3c');
