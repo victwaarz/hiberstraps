@@ -1,9 +1,6 @@
 package be.faros.hiberstraps.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Star extends SpaceObject {
@@ -11,6 +8,7 @@ public class Star extends SpaceObject {
     private Type type;
 
     @ManyToOne(optional = false)
+    @JoinColumn(columnDefinition = "UUID")
     private Galaxy galaxy;
 
     public Type getType() {

@@ -11,6 +11,7 @@ public abstract class SpaceObject extends BaseEntity {
     private double eccentricity;
 
     @ManyToOne
+    @JoinColumn(columnDefinition = "UUID")
     private SpaceObject centralBody;
 
     @OneToMany(mappedBy = "centralBody")
