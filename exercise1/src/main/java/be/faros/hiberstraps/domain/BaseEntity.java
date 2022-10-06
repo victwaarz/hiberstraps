@@ -10,7 +10,7 @@ import java.util.UUID;
 public class BaseEntity {
     @Id
     @GeneratedValue
-    @Column(columnDefinition = "CHAR(36)")
+    @Column(columnDefinition = "UUID")
     private UUID id;
 
     public UUID getId() {
@@ -19,5 +19,15 @@ public class BaseEntity {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return id.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof BaseEntity && ((BaseEntity) obj).getId().equals(id);
     }
 }

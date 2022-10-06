@@ -96,24 +96,46 @@ VALUES ('f6cb2906-9d84-4ba5-9491-e7be5082987e', 'SPHERICAL');
 
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('0076f576-6ac0-48b0-b898-dbb25504e2ef', 'Luna', 0.07485386575, 0.0549, '273974a5-caf8-46a6-b5c4-440f6fbece3c');
+INSERT INTO planetoid (id, shape)
+VALUES ('0076f576-6ac0-48b0-b898-dbb25504e2ef', 'SPHERICAL');
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('1a9375bc-7606-4888-8a27-cf57838114ba', 'Titan', 15.945, 0.0288, '80d4df3e-2240-424d-8b76-b410b252389c');
+INSERT INTO planetoid (id, shape)
+VALUES ('1a9375bc-7606-4888-8a27-cf57838114ba', 'SPHERICAL');
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('f0ee90a3-b242-4d2e-8a5a-bb2fd118cc9b', 'Enceladus', 1.370218, 0.0047, '80d4df3e-2240-424d-8b76-b410b252389c');
+INSERT INTO planetoid (id, shape)
+VALUES ('f0ee90a3-b242-4d2e-8a5a-bb2fd118cc9b', 'SPHERICAL');
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('be4ca182-8869-4b7b-9b2d-63e6608adac5', 'Mimas', 0.942421959, 0.0196, '80d4df3e-2240-424d-8b76-b410b252389c');
+INSERT INTO planetoid (id, shape)
+VALUES ('be4ca182-8869-4b7b-9b2d-63e6608adac5', 'SPHERICAL');
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('9cd4f1f3-453f-4f84-827d-27acc6c186a3', 'Europa', null, null, '1a317980-62b7-4ac8-a6b2-78ebe8b077f0');
+INSERT INTO planetoid (id, shape)
+VALUES ('9cd4f1f3-453f-4f84-827d-27acc6c186a3', 'SPHERICAL');
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('cf0a283c-1caa-45be-9fb5-2be65b6a44bd', 'Io', null, null, '1a317980-62b7-4ac8-a6b2-78ebe8b077f0');
+INSERT INTO planetoid (id, shape)
+VALUES ('cf0a283c-1caa-45be-9fb5-2be65b6a44bd', 'SPHERICAL');
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('7b9ee190-3e04-4952-9837-7caf327a454a', 'Ganymedes', null, null, '1a317980-62b7-4ac8-a6b2-78ebe8b077f0');
+INSERT INTO planetoid (id, shape)
+VALUES ('7b9ee190-3e04-4952-9837-7caf327a454a', 'SPHERICAL');
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('a69a202c-2691-4114-b8f7-9aef99cea844', 'Callisto', null, null, '1a317980-62b7-4ac8-a6b2-78ebe8b077f0');
+INSERT INTO planetoid (id, shape)
+VALUES ('a69a202c-2691-4114-b8f7-9aef99cea844', 'SPHERICAL');
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('51ed66d8-0f6e-40bb-b073-9e263e1b62ed', 'Phobos', null, null, '813ae614-ed2d-4156-b6d7-a6e5e9b1c296');
+INSERT INTO planetoid (id, shape)
+VALUES ('51ed66d8-0f6e-40bb-b073-9e263e1b62ed', 'IRREGULAR');
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('e84d4acf-6cf4-42d5-810d-48b02e986295', 'Deimos', null, null, '813ae614-ed2d-4156-b6d7-a6e5e9b1c296');
+INSERT INTO planetoid (id, shape)
+VALUES ('e84d4acf-6cf4-42d5-810d-48b02e986295', 'IRREGULAR');
 
 INSERT INTO space_object (id, name, orbital_period, eccentricity, central_body_id)
 VALUES ('7c91631e-6897-4573-a10c-5e7b4ab2b08b', 'Fomalhaut b', null, null, '779dc4cf-e22b-4001-a79e-2b799bc08232');
+INSERT INTO planet (id, gaseous)
+VALUES ('7c91631e-6897-4573-a10c-5e7b4ab2b08b', true);

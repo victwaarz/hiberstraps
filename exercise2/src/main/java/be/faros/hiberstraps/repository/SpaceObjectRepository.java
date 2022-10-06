@@ -4,16 +4,15 @@ import be.faros.hiberstraps.domain.Planet;
 import be.faros.hiberstraps.domain.Planetoid;
 import be.faros.hiberstraps.domain.SpaceObject;
 import be.faros.hiberstraps.domain.Star;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Join;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import java.util.List;
 import java.util.UUID;
 
+@Repository
 public class SpaceObjectRepository {
     private final EntityManager em;
 
@@ -21,17 +20,9 @@ public class SpaceObjectRepository {
         this.em = em;
     }
 
+
     public SpaceObject getById(UUID id) {
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<SpaceObject> query = cb.createQuery(SpaceObject.class);
-
-        Root<SpaceObject> root = query.from(SpaceObject.class);
-        query.where(cb.equal(root.get("id"), id));
-
-        query.select(root);
-
-        TypedQuery<SpaceObject> tq = em.createQuery(query);
-        return tq.getSingleResult();
+        return em.find(SpaceObject.class, id);
     }
 
     public List<SpaceObject> findAllOrbitingStar() {
@@ -39,9 +30,9 @@ public class SpaceObjectRepository {
         CriteriaQuery<SpaceObject> query = cb.createQuery(SpaceObject.class);
 
         Root<SpaceObject> root = query.from(SpaceObject.class);
-        Join<SpaceObject, SpaceObject> firstLayer = root.join("centralBody");
-        Join<SpaceObject, SpaceObject> secondLayer = root.join("centralBody");
-        Join<SpaceObject, SpaceObject> thirdLayer = root.join("centralBody");
+        Join<SpaceObject, SpaceObject> firstLayer = root.join("centralBody", JoinType.LEFT);
+        Join<SpaceObject, SpaceObject> secondLayer = firstLayer.join("centralBody", JoinType.LEFT);
+        Join<SpaceObject, SpaceObject> thirdLayer = secondLayer.join("centralBody", JoinType.LEFT);
 
         query.where(cb.or(cb.equal(firstLayer.type(), Star.class), cb.equal(secondLayer.type(), Star.class), cb.equal(thirdLayer.type(), Star.class)));
 

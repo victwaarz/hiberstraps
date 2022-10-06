@@ -10,4 +10,3 @@ Steps:
 3. Transactions
 4. Repository with Spring Data JPA
 5. Customizing Spring Data Repositories (Impl)
-6. 
