@@ -5,9 +5,18 @@ It was created using [Spring Initializr](http://start.spring.io).
 Included dependencies are Spring Data JPA, Spring Web and the H2 Database driver.
 
 ### The exercise
+
 Your goal is to implement the diagram shown below as JPA entity classes.
 
-Starting the Spring application will run an in memory H2 database that you can access through the [web console](http://localhost:8080/h2-console).
+Starting the Spring application will run an in memory H2 database that you can access through
+the [web console](http://localhost:8080/h2-console).
 The database schema generated for the entity classes can be viewed there.
 
-![Satellite Diagram](/spaceObjects.png)
+![Satellite Diagram](/satellites.png)
+
+Name: String
+Orbital Period: double
+Eccentricity: double
+Gaseous: boolean
+Type: ignore
+Shape: ignore
