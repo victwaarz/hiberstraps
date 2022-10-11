@@ -18,5 +18,5 @@ Name: String
 Orbital Period: double
 Eccentricity: double
 Gaseous: boolean
-Type: ignore
-Shape: ignore
+Type: enum: DWARF, GIANT
+Shape: enum : IRREGULAR, SPHERICAL
