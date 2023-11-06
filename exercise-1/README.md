@@ -13,10 +13,3 @@ the [web console](http://localhost:8080/h2-console).
 The database schema generated for the entity classes can be viewed there.
 
 ![Satellite Diagram](/satellites.png)
-
-Name: String
-Orbital Period: double
-Eccentricity: double
-Gaseous: boolean
-Type: enum: DWARF, GIANT
-Shape: enum : IRREGULAR, SPHERICAL
