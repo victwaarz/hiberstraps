@@ -8,8 +8,8 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class SpaceObject extends BaseEntity {
     private String name;
-    private Long orbitalPeriod;
-    private Double eccentricity;
+    private long orbitalPeriod;
+    private double eccentricity;
 
     @ManyToOne
     @JoinColumn(columnDefinition = "UUID")
@@ -26,19 +26,19 @@ public abstract class SpaceObject extends BaseEntity {
         this.name = name;
     }
 
-    public Long getOrbitalPeriod() {
+    public long getOrbitalPeriod() {
         return orbitalPeriod;
     }
 
-    public void setOrbitalPeriod(Long orbitalPeriod) {
+    public void setOrbitalPeriod(long orbitalPeriod) {
         this.orbitalPeriod = orbitalPeriod;
     }
 
-    public Double getEccentricity() {
+    public double getEccentricity() {
         return eccentricity;
     }
 
-    public void setEccentricity(Double eccentricity) {
+    public void setEccentricity(double eccentricity) {
         this.eccentricity = eccentricity;
     }
 
@@ -54,7 +54,7 @@ public abstract class SpaceObject extends BaseEntity {
         return satellites;
     }
 
-    public void setSatellites(List<SpaceObject> spaceObjects) {
-        this.satellites = spaceObjects;
+    public void setSatellites(List<SpaceObject> satellites) {
+        this.satellites = satellites;
     }
 }

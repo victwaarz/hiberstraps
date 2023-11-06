@@ -54,7 +54,7 @@ public abstract class SpaceObject extends BaseEntity {
         return satellites;
     }
 
-    public void setSatellites(List<SpaceObject> satellites) {
-        this.satellites = satellites;
+    public void setSatellites(List<SpaceObject> spaceObjects) {
+        this.satellites = spaceObjects;
     }
 }
