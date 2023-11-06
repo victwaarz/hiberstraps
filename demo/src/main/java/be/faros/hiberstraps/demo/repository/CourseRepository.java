@@ -1,11 +1,11 @@
 package be.faros.hiberstraps.demo.repository;
 
 import be.faros.hiberstraps.demo.domain.Course;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+import jakarta.persistence.criteria.*;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.*;
 import java.util.List;
 
 @Repository

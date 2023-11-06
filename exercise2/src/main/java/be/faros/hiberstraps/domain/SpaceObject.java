@@ -1,6 +1,7 @@
 package be.faros.hiberstraps.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity

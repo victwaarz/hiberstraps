@@ -1,7 +1,8 @@
 package be.faros.hiberstraps.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+
 import java.util.List;
 
 @Entity
