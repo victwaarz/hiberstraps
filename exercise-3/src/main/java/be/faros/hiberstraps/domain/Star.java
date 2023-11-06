@@ -1,6 +1,6 @@
 package be.faros.hiberstraps.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class Star extends SpaceObject {

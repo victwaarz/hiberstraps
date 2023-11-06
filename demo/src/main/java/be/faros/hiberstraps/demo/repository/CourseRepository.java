@@ -1,6 +1,6 @@
 package be.faros.hiberstraps.demo.repository;
 
-import be.faros.hiberstraps.demo.domain.Course;
+import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
