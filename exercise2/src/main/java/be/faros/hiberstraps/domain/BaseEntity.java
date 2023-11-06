@@ -1,24 +1,13 @@
 package be.faros.hiberstraps.domain;
 
+import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
+import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import java.util.UUID;
 
 @MappedSuperclass
-public class BaseEntity {
-    @Id
-    @GeneratedValue
-    @Column(columnDefinition = "UUID")
-    private UUID id;
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
+@AttributeOverride(name = "id", column = @Column(columnDefinition = "UUID"))
+public class BaseEntity extends AbstractPersistable<UUID> {
 }
