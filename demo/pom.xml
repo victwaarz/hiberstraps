@@ -58,7 +58,7 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <configuration>
                     <user>sa</user>
-                    <url>jdbc:h2:file:./test</url>
+                    <url>jdbc:h2:file:./db/test</url>
                     <schemas>
                         <schema>APP</schema>
                     </schemas>
