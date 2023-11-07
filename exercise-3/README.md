@@ -1,6 +1,6 @@
 ## Satellite starter
 
-This is the start point for exercise 2 of the Hibernate course.
+This is the start point for exercise 3 of the Hibernate course.
 It builds upon the solution to exercise 1.
 
 Included dependencies are Spring Data JPA, Spring Web and the H2 Database driver.
