@@ -1,5 +1,7 @@
 package be.faros.hiberstraps.repository;
 
+import be.faros.hiberstraps.domain.Planet;
+import be.faros.hiberstraps.domain.Planetoid;
 import be.faros.hiberstraps.domain.SpaceObject;
 import be.faros.hiberstraps.domain.Star;
 import jakarta.persistence.criteria.Join;
@@ -22,7 +24,7 @@ public interface SpaceObjectRepository extends Repository<SpaceObject, UUID>, Jp
             Predicate p2 = cb.and(cb.isNotNull(cb2), cb.equal(cb2.type(), Star.class));
             Predicate p3 = cb.and(cb.isNotNull(cb3), cb.equal(cb3.type(), Star.class));
 
-            return cb.and(p1, p2, p3);
+            return cb.or(p1, p2, p3);
         });
     }
 
@@ -32,8 +34,8 @@ public interface SpaceObjectRepository extends Repository<SpaceObject, UUID>, Jp
 
             Join<Object, Object> centralBody = root.join("centralBody");
             Predicate cbPredicate = cb.and(cb.equal(centralBody.type(), Star.class), cb.equal(centralBody.get("type"), starType));
-
-            return cb.and(cbPredicate, namePredicate);
+            Predicate typePredicate = root.type().in(Planet.class, Planetoid.class);
+            return cb.and(cbPredicate, typePredicate, namePredicate);
         });
     }
 }
