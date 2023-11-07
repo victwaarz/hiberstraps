@@ -57,4 +57,11 @@ public abstract class SpaceObject extends BaseEntity {
     public void setSatellites(List<SpaceObject> spaceObjects) {
         this.satellites = spaceObjects;
     }
+
+    @Override
+    public String toString() {
+        return "SpaceObject{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

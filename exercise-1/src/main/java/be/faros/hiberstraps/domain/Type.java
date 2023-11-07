@@ -1,0 +1,8 @@
+package be.faros.hiberstraps.domain;
+
+public enum Type {
+    MAIN_SEQUENCE,
+    RED_SUPERGIANT, BLUE_SUPERGIANT,
+    RED_GIANT,BLUE_GIANT,YELLOW_GIANT,
+    YELLOW_DWARF,RED_DWARF, WHITE_DWARF, BROWN_DWARF
+}
