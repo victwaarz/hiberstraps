@@ -1,0 +1,27 @@
+2023-11-07 15:28:51 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE space_object (\000d\000a    id UUID NOT NULL PRIMARY KEY,\000d\000a    name VARCHAR2(30) NOT NULL,\000d\000a    orbital_period BIGINT,\000d\000a    eccentricity DOUBLE[*](10, 9),\000d\000a    central_body_id UUID FOREIGN KEY REFERENCES space_object(central_body_id)\000d\000a)"; expected "PRECISION, ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE space_object (
+    id UUID NOT NULL PRIMARY KEY,
+    name VARCHAR2(30) NOT NULL,
+    orbital_period BIGINT,
+    eccentricity DOUBLE(10, 9),
+    central_body_id UUID FOREIGN KEY REFERENCES space_object(central_body_id)
+) [42001-214]
+2023-11-07 15:33:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE space_object (\000d\000a    id UUID NOT NULL PRIMARY KEY,\000d\000a    name VARCHAR2(30) NOT NULL,\000d\000a    orbital_period BIGINT,\000d\000a    eccentricity DOUBLE[*](10, 9),\000d\000a    central_body_id UUID --FOREIGN KEY REFERENCES space_object(central_body_id)\000d\000a)"; expected "PRECISION, ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE space_object (
+    id UUID NOT NULL PRIMARY KEY,
+    name VARCHAR2(30) NOT NULL,
+    orbital_period BIGINT,
+    eccentricity DOUBLE(10, 9),
+    central_body_id UUID --FOREIGN KEY REFERENCES space_object(central_body_id)
+) [42001-214]
+2023-11-07 15:34:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE space_object (\000d\000a    id UUID NOT NULL PRIMARY KEY,\000d\000a    name VARCHAR2(30) NOT NULL,\000d\000a    orbital_period BIGINT,\000d\000a    eccentricity DOUBLE[*](10, 9),\000d\000a    central_body_id UUID /*FOREIGN KEY REFERENCES space_object(central_body_id)*/\000d\000a)"; expected "PRECISION, ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE space_object (
+    id UUID NOT NULL PRIMARY KEY,
+    name VARCHAR2(30) NOT NULL,
+    orbital_period BIGINT,
+    eccentricity DOUBLE(10, 9),
+    central_body_id UUID /*FOREIGN KEY REFERENCES space_object(central_body_id)*/
+) [42001-214]

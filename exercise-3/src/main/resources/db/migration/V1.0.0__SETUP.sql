@@ -1,0 +1,28 @@
+CREATE TABLE space_object (
+    id UUID NOT NULL PRIMARY KEY,
+    name VARCHAR2(30) NOT NULL,
+    orbital_period BIGINT,
+    eccentricity DOUBLE(10, 9),
+    central_body_id UUID /*FOREIGN KEY REFERENCES space_object(central_body_id)*/
+);
+
+CREATE TABLE star (
+    id UUID NOT NULL PRIMARY KEY,
+    type ENUM('MAIN_SEQUENCE', 'RED_SUPERGIANT', 'BLUE_SUPERGIANT', 'RED_GIANT', 'YELLOW_GIANT', 'BLUE_GIANT', 'YELLOW_DWARF', 'WHITE_DWARF', 'RED_DWARF', 'BROWN_DWARF') NOT NULL,
+    galaxy_id UUID NOT NULL /*FOREIGN KEY REFERENCES galaxy(galaxy_id)*/
+);
+
+CREATE TABLE planetoid (
+    id UUID NOT NULL PRIMARY KEY,
+    shape ENUM('IRREGULAR', 'SPHERICAL') NOT NULL
+);
+
+CREATE TABLE planet (
+    id UUID NOT NULL PRIMARY KEY,
+    gaseous BOOLEAN NOT NULL
+);
+
+CREATE TABLE galaxy (
+    id UUID NOT NULL PRIMARY KEY,
+    name VARCHAR2(10) NOT NULL
+);

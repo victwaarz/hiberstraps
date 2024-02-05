@@ -18,7 +18,7 @@ public interface GalaxyRepository extends Repository<Galaxy, UUID>, JpaSpecifica
     default Galaxy findGalaxyByNameFuzzy(String name){
         return findOne(
                     (galaxy, query, cb) ->
-                            cb.like(galaxy.get("name"), "%"+name+"%")
+                            cb.like(cb.upper(galaxy.get("name")), "%"+name.toUpperCase()+"%")
         ).orElse(null);
     }
 
